@@ -38,12 +38,15 @@ const Monsters = () => {
     <div>
       <ul className="flex flex-wrap justify-center gap-2">
         {imageList.map((image, index) => (
-          <li key={index}>
+          <li key={index} className='flex flex-col items-center'>
             <img
               src={image.download_url}
               alt={image.name}
-              className="size-32 md:size-48"
+              className="size-36 md:size-48"
             />
+            <p className='py-2 font-bold'>
+              {(image.name).toUpperCase().replace('.PNG', '')}
+            </p>
           </li>
         ))}
       </ul>
