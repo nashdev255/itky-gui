@@ -36,23 +36,23 @@ const Monsters = () => {
 
   return (
     <div>
-      <h1 className='text-3xl px-16 py-8 font-bold font-sans'>敵キャラ一覧</h1>
+      <h1 className='px-16 py-8 font-sans text-3xl font-bold'>敵キャラ一覧</h1>
       <div className='flex justify-center py-4'>
-      <ul className="flex flex-wrap justify-center gap-2">
-        {imageList.map((image, index) => (
-          <li key={index} className='flex flex-col items-center'>
-            <img
-              src={image.download_url}
-              alt={image.name}
-              className="size-36 md:size-48"
-            />
-            <p className='py-2 font-bold'>
-              {(image.name).toUpperCase().replace('.PNG', '')}
-            </p>
-          </li>
-        ))}
-      </ul>
-    </div>
+        <ul className="flex flex-wrap justify-center gap-2">
+          {imageList.map((image, index) => (
+            <li key={index} className='flex flex-col items-center'>
+              <img
+                src={image.download_url}
+                alt={image.name}
+                className="size-36 md:size-48"
+              />
+              <p className='py-2 font-bold'>
+                {(image.name).toUpperCase().replace('.PNG', '')}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
