@@ -36,6 +36,8 @@ const Monsters = () => {
 
   return (
     <div>
+      <h1 className='text-3xl px-16 py-8 font-bold font-sans'>敵キャラ一覧</h1>
+      <div className='flex justify-center py-4'>
       <ul className="flex flex-wrap justify-center gap-2">
         {imageList.map((image, index) => (
           <li key={index} className='flex flex-col items-center'>
@@ -50,6 +52,7 @@ const Monsters = () => {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 };
