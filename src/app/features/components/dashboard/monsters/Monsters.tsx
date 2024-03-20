@@ -42,7 +42,7 @@ const Monsters = () => {
             <img
               src={image.download_url}
               alt={image.name}
-              className="size-48"
+              className="size-32 md:size-48"
             />
           </li>
         ))}
