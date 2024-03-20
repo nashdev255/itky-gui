@@ -2,8 +2,13 @@
 
 import { useEffect, useState } from 'react';
 
+export type Monster = {
+  download_url: string,
+  name: string,
+};
+
 const Monsters = () => {
-  const [imageList, setImageList] = useState([]);
+  const [imageList, setImageList] = useState<Monster[]>([]);
   const [message, setMessage] = useState<string | null>(null);
   
   useEffect(() => {
