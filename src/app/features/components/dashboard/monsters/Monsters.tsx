@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export type Monster = {
   download_url: string,
@@ -41,10 +42,12 @@ const Monsters = () => {
         <ul className="flex flex-wrap justify-center gap-2">
           {imageList.map((image, index) => (
             <li key={index} className='flex flex-col items-center'>
-              <img
+              <Image
                 src={image.download_url}
                 alt={image.name}
-                className="size-36 md:size-48"
+                height={200}
+                width={200}
+                className='size-36 md:size-48'
               />
               <p className='py-2 font-bold'>
                 {(image.name).toUpperCase().replace('.PNG', '')}
