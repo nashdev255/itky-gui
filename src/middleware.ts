@@ -15,6 +15,9 @@ function middleware(req: NextRequest): NextResponse {
     const [user, pwd] = atob(authValue).split(':');
 
     if ( user === basicAuthUser && pwd === basicAuthPassword ) {
+      if (req.nextUrl.pathname.endsWith('/dashboard')) {
+        return NextResponse.redirect(new URL('/dashboard/monsters', req.url));
+      }
       return NextResponse.next();
     }
   }
@@ -26,6 +29,3 @@ function middleware(req: NextRequest): NextResponse {
 
 export { middleware };
 
-// if (req.nextUrl.pathname.endsWith('/dashboard')) {
-//   return NextResponse.redirect(new URL('/dashboard/monsters', req.url));
-// }
