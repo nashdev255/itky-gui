@@ -8,7 +8,7 @@ const Form = () => {
       onSubmit={handleSubmit}
       className='p-8'
     >
-      <h1 className='mb-8 px-8 text-2xl font-bold'>ドキュメントに追加する</h1>
+      <h1 className='mb-8 px-8 text-center text-2xl font-bold md:text-left'>ドキュメントに追加する</h1>
       <div className='mb-8 flex space-x-4'>
         <p className='flex items-center text-xl'>追加項目</p>
         <select
