@@ -37,7 +37,7 @@ const Monsters = () => {
 
   return (
     <div>
-      <h1 className='px-16 py-8 font-sans text-3xl font-bold'>敵キャラ一覧</h1>
+      <h1 className='px-16 py-8 font-sans text-3xl font-bold'>敵キャラ一覧 (全{imageList.length}種)</h1>
       <div className='flex justify-center py-4'>
         <ul className="flex flex-wrap justify-center gap-2">
           {imageList.map((image, index) => (
