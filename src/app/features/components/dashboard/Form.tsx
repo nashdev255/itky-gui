@@ -78,6 +78,7 @@ const Form = () => {
               name="name"
               type="text"
               className='max-w-48 rounded-md border-2 px-3 py-2'
+              required
             />
           </div>
 
@@ -103,6 +104,7 @@ const Form = () => {
               name="price"
               type="number"
               className='max-w-48 rounded-md border-2 px-3 py-2'
+              required
             />
           </div>
 
@@ -126,6 +128,7 @@ const Form = () => {
             <textarea
               name="description"
               className='max-w-48 rounded-md border-2 px-3 py-2'
+              required
             />
           </div>
 
@@ -135,6 +138,7 @@ const Form = () => {
             <textarea
               name="effection"
               className='max-w-48 rounded-md border-2 px-3 py-2'
+              required
             />
           </div>
 
