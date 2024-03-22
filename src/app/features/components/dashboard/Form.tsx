@@ -14,14 +14,14 @@ const Form = () => {
     const formElement = document.querySelector('form');
     const formData = new FormData(formElement!);
 
-    const editTarget = (() => {
-      const et = formData.get('editTarget')?.toString();
-      if ( et === 'Monsters' )  return 'monster';
-      if ( et === 'Weapons' )   return 'weapon';
-      if ( et === 'Armors' )    return 'armor';
-      if ( et === 'Items' )     return 'item';
-      if ( et === 'Materials' ) return 'material';
-    })();
+    const editTarget = formData.get('editTarget')?.toString();
+    const contentName = formData.get('name')?.toString();
+    const rarity = formData.get('rarity')?.toString();
+    const price = formData.get('price')?.toString();
+    const whenEnable = formData.get('whenEnable')?.toString();
+    const description = formData.get('description')?.toString();
+    const effection = formData.get('effection')?.toString();
+    const isConsumable = formData.get('isConsumable')?.toString();
 
     try {
       await fetch(
@@ -32,7 +32,12 @@ const Form = () => {
             'Accept': 'application/vnd.github+json',
             'Authorization': `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
           },
-          body: `{"ref":"master","inputs":{"message": "${editTarget}"}}`
+          body: `{
+            "ref":"master",
+            "inputs":{
+              "message": "${editTarget}"
+            }
+          }`
         }
       );
     } catch ( error ) {
@@ -49,27 +54,117 @@ const Form = () => {
       className='p-8'
     >
       <h1 className='mb-8 px-8 text-center text-2xl font-bold md:text-left'>ドキュメントに追加する</h1>
-      <div className='mb-8 flex space-x-4'>
-        <p className='flex items-center text-xl'>追加項目</p>
-        <select
-          name="editTarget"
-          className='border-2 px-3 py-2'
-        >
-          <option>Monsters</option>
-          <option>Weapons</option>
-          <option>Armors</option>
-          <option>Items</option>
-          <option>Materials</option>
-        </select>
-      </div>
-      <div className='absolute bottom-8 right-8'>
-        {loading ? (
-          <div className='flex h-14 w-28 items-center justify-center'>
-            <Loading />
+      <div className='flex justify-center md:justify-start'>
+        <div className='md:px-8'>
+          {/* 追加項目の選択 */}
+          <div className='mb-8 flex space-x-4'>
+            <p className='flex items-center text-xl'>追加項目</p>
+            <select
+              name="editTarget"
+              className='rounded-md border-2 px-3 py-2'
+            >
+              {/* <option>Monsters</option> */}
+              <option value='weapon'>Weapons</option>
+              <option value='armor'>Armors</option>
+              <option value='item'>Items</option>
+              <option value='material'>Materials</option>
+            </select>
           </div>
-        ) : (
-          <SubmitButton />
-        )}
+
+          {/* 名前の入力 */}
+          <div className='mb-8 flex space-x-4'>
+            <p className='flex items-center text-xl'>名前</p>
+            <input
+              name="name"
+              type="text"
+              className='max-w-48 rounded-md border-2 px-3 py-2'
+            />
+          </div>
+
+          {/* レア度の選択 */}
+          <div className='mb-8 flex space-x-4'>
+            <p className='flex items-center text-xl'>レア度</p>
+            <select
+              name="rarity"
+              className='rounded-md border-2 px-3 py-2'
+            >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+
+          {/* 価格の入力 */}
+          <div className='mb-8 flex space-x-4'>
+            <p className='flex items-center text-xl'>価格</p>
+            <input
+              name="price"
+              type="number"
+              className='max-w-48 rounded-md border-2 px-3 py-2'
+            />
+          </div>
+
+          {/* 使用可能時の選択 */}
+          <div className='mb-8 flex space-x-4'>
+            <p className='flex items-center text-xl'>使用可能時</p>
+            <select
+              name="whenEnable"
+              className='rounded-md border-2 px-3 py-2'
+            >
+              <option value='onMenu'>メニュー画面</option>
+              <option value='onFight'>戦闘画面</option>
+              <option value='always'>常時</option>
+              <option value='disabled'>使用不可</option>
+            </select>
+          </div>
+          
+          {/* 説明の入力 */}
+          <div className='mb-8 flex space-x-4'>
+            <p className='flex items-center text-xl'>説明</p>
+            <textarea
+              name="description"
+              className='max-w-48 rounded-md border-2 px-3 py-2'
+            />
+          </div>
+
+          {/* 使用効果の入力 */}
+          <div className='mb-8 flex space-x-4'>
+            <p className='flex items-center text-xl'>使用効果</p>
+            <textarea
+              name="effection"
+              className='max-w-48 rounded-md border-2 px-3 py-2'
+            />
+          </div>
+
+          {/* 消費の有無の選択 */}
+          <div className='mb-8 flex flex-col space-y-4'>
+            <p className='flex items-center text-xl'>消費の有無</p>
+            <div className='flex items-center space-x-4'>
+              <div>
+                <input
+                  type='radio' name='isConsumable' value='consumable' defaultChecked={true} />
+                <label htmlFor='consumable'>あり</label>
+              </div>
+              <div>
+                <input type='radio' name='isConsumable' value='unconsumable' />
+                <label htmlFor='unconsumable'>なし</label>
+              </div>
+            </div>
+          </div>
+
+          {/* 送信ボタン */}
+          <div className='absolute bottom-8 right-8'>
+            {loading ? (
+              <div className='flex h-14 w-28 items-center justify-center'>
+                <Loading />
+              </div>
+            ) : (
+              <SubmitButton />
+            )}
+          </div>
+        </div>
       </div>
     </form>
   );

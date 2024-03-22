@@ -5,7 +5,7 @@ import { MdOutlineClose } from 'react-icons/md';
 
 const ModalForm = ({ handleClick }: { handleClick: Function }) => {
   return (
-    <div className='fixed inset-0 z-50 m-auto h-[90vh] w-[80vw] rounded-xl border-2 bg-white shadow-xl'>
+    <div className='fixed inset-0 z-50 m-auto h-[90vh] w-[80vw] max-w-128 rounded-xl border-2 bg-white shadow-xl'>
       <Form />
       <button
         onClick={() => handleClick()}
