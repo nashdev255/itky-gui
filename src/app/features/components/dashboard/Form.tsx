@@ -57,8 +57,8 @@ const Form = () => {
       <div className='flex justify-center md:justify-start'>
         <div className='md:px-8'>
           {/* 追加項目の選択 */}
-          <div className='mb-8 flex space-x-4'>
-            <p className='flex items-center text-xl'>追加項目</p>
+          <div className='mb-6 flex space-x-4 md:mb-8'>
+            <p className='flex items-center md:text-xl'>追加項目</p>
             <select
               name="editTarget"
               className='rounded-md border-2 px-3 py-2'
@@ -72,8 +72,8 @@ const Form = () => {
           </div>
 
           {/* 名前の入力 */}
-          <div className='mb-8 flex space-x-4'>
-            <p className='flex items-center text-xl'>名前</p>
+          <div className='mb-6 flex space-x-4 md:mb-8'>
+            <p className='flex items-center md:text-xl'>名前</p>
             <input
               name="name"
               type="text"
@@ -83,8 +83,8 @@ const Form = () => {
           </div>
 
           {/* レア度の選択 */}
-          <div className='mb-8 flex space-x-4'>
-            <p className='flex items-center text-xl'>レア度</p>
+          <div className='mb-6 flex space-x-4 md:mb-8'>
+            <p className='flex items-center md:text-xl'>レア度</p>
             <select
               name="rarity"
               className='rounded-md border-2 px-3 py-2'
@@ -98,8 +98,8 @@ const Form = () => {
           </div>
 
           {/* 価格の入力 */}
-          <div className='mb-8 flex space-x-4'>
-            <p className='flex items-center text-xl'>価格</p>
+          <div className='mb-6 flex space-x-4 md:mb-8'>
+            <p className='flex items-center md:text-xl'>価格</p>
             <input
               name="price"
               type="number"
@@ -109,8 +109,8 @@ const Form = () => {
           </div>
 
           {/* 使用可能時の選択 */}
-          <div className='mb-8 flex space-x-4'>
-            <p className='flex items-center text-xl'>使用可能時</p>
+          <div className='mb-6 flex space-x-4 md:mb-8'>
+            <p className='flex items-center md:text-xl'>使用可能時</p>
             <select
               name="whenEnable"
               className='rounded-md border-2 px-3 py-2'
@@ -123,8 +123,8 @@ const Form = () => {
           </div>
           
           {/* 説明の入力 */}
-          <div className='mb-8 flex space-x-4'>
-            <p className='flex items-center text-xl'>説明</p>
+          <div className='mb-6 flex space-x-4 md:mb-8'>
+            <p className='flex items-center md:text-xl'>説明</p>
             <textarea
               name="description"
               className='max-w-48 rounded-md border-2 px-3 py-2'
@@ -133,8 +133,8 @@ const Form = () => {
           </div>
 
           {/* 使用効果の入力 */}
-          <div className='mb-8 flex space-x-4'>
-            <p className='flex items-center text-xl'>使用効果</p>
+          <div className='mb-6 flex space-x-4 md:mb-8'>
+            <p className='flex items-center md:text-xl'>使用効果</p>
             <textarea
               name="effection"
               className='max-w-48 rounded-md border-2 px-3 py-2'
@@ -143,8 +143,8 @@ const Form = () => {
           </div>
 
           {/* 消費の有無の選択 */}
-          <div className='mb-8 flex flex-col space-y-4'>
-            <p className='flex items-center text-xl'>消費の有無</p>
+          <div className='mb-6 flex flex-col space-y-4 md:mb-8'>
+            <p className='flex items-center md:text-xl'>消費の有無</p>
             <div className='flex items-center space-x-4'>
               <div>
                 <input
