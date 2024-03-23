@@ -5,7 +5,7 @@ import ModalForm from '@/app/features/components/dashboard/ModalForm';
 import FloatingButton from '@/app/features/components/dashboard/FloatingButton';
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalClose = () => {
     setIsModalOpen(false);
