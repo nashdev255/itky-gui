@@ -64,10 +64,10 @@ const Form = () => {
               className='rounded-md border-2 px-3 py-2'
             >
               {/* <option>Monsters</option> */}
-              <option value='weapon'>Weapons</option>
-              <option value='armor'>Armors</option>
-              <option value='item'>Items</option>
-              <option value='material'>Materials</option>
+              <option value='weapons'>Weapons</option>
+              <option value='armors'>Armors</option>
+              <option value='items'>Items</option>
+              <option value='materials'>Materials</option>
             </select>
           </div>
 
