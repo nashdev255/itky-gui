@@ -1,5 +1,16 @@
 # イトキヨクエスト制作委員会 公式サイト
 
+### 技術スタック
+
+| Domain         | Technology Stack              |
+| -------------- | ----------------------------- |
+| Frontend       | React, Next.js                |
+| Backend        | TypeScript                    |
+| Infrastructure | Vercel                        |
+| Database       |           |
+| Formatter      | ESLint             |
+| others         | Git, GitHub                   |
+
 ### システム構成図
 
 ![System Archtecture Diagram](./public/images/system_config.jpeg)
