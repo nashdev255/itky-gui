@@ -29,7 +29,7 @@ const Monsters = () => {
         const parsedData = JSON.parse(JSON.stringify(data));
         setImageList(parsedData);
       } catch ( error ) {
-        setMessage('Error: ' + error);
+        setMessage(error);
         alert(error);
       }
     })();
